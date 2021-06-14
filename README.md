@@ -1,7 +1,7 @@
 
 # Web Development
 
-Projects completed at the end of each learning phase of Web Development.
+Projects completed after each learning phase of Web Development.
 
 Front End Projects would cover HTML, CSS and JavaScript languages.
 
