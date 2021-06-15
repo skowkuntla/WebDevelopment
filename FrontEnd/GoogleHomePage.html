@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Google</title>
+
+      <style>
+            :root{
+                  --border-color: #ddd;
+                  --button-search-font: #3c4043;
+                  --button-search-background: #f8f9fa;
+                  --footer-background: #f2f2f2;
+                  --footer-font: #70757a;
+                  --footer-font-hover: #3c4043;
+                  --footer-font-active: #ea4335;
+            }
+
+            *,
+            ::before,
+            ::after{
+                  box-sizing: border-box;
+                  padding: 0px;
+                  margin: 0px;
+            }
+
+            html{
+                  font-size: 62.5%;
+            }
+
+            body{
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 1.6rem;
+                  line-height: 1.6;
+            }
+
+            a{
+                  color: inherit;
+                  text-decoration: none;
+            }
+
+            img{
+                  display: block;
+                  width: 100%;
+            }
+
+            input{
+                  border: none;
+                  outline: none;
+            }
+
+            button{
+                  border: none;
+                  font-family: inherit;
+                  cursor: pointer;
+            }
+
+            button:focus{
+                  outline: none;
+            }
+
+            .nav{
+                  width: auto;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  margin-top: 1.5rem;
+                  font-size: 1.3rem;
+            }
+
+            .nav-link{
+                  margin-right: 1.5rem;
+                  opacity: 0.85;
+            }
+
+            .nav-link:hover{
+                  text-decoration: underline;
+            }
+
+            .button-apps{
+                  width: 30px;
+                  height: 30px;
+                  margin-right: 1.5rem;
+                  background-color: #fff;
+                  background-image: url("//ssl.gstatic.com/gb/images/i1_1967ca6a.png");
+                  background-position: -132px -38px;
+                  opacity: 0.5;
+            }
+
+            .button-apps:hover,
+            .button-apps:focus{
+                  opacity: 0.85;
+            }
+
+            .user-avatar img{
+                  height: 34px;
+                  width: 34px;
+                  border: 1px solid #ddd;
+                  border-radius: 50%;
+                  margin-right: 3rem;
+            }
+
+            .user-avatar:hover img{
+                  border: 1px solid #aaa;
+            }
+
+            .button-sign-in{
+                  padding: 0.7rem 1rem;
+                  border-radius: 3px;
+                  margin-right: 3rem;
+                  background-color: rgb(69, 133, 244);
+                  color: #fff;
+                  font-weight: bold;
+                  opacity: 0.95;
+            }
+
+            .button-sign-in:hover,
+            .button-sign-in:focus{
+                  opacity: 1;
+            }
+
+            .main{
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: flex-start;
+                  margin-top: 15rem;
+            }
+
+            .logo{
+                  width: 272px;
+                  height: 92px;
+                  margin-bottom: 3rem;
+            }
+
+            .searchbar{
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  width: 580px;
+                  padding: 1rem;
+                  padding-right: 1.5rem;
+                  border: 0.1px solid var(--border-color);
+                  border-radius: 30px;
+            }
+
+            .searchbar:hover,
+            .searchbar:focus-within{
+                  border-color: white;
+                  box-shadow: 0 1px 6px 0 rgba(32, 32, 0.28);
+            }
+
+            .search-icon{
+                  width: 25px;
+                  height: 25px;
+                  margin-right: 1rem;
+            }
+
+            .search-input{
+                  width: 90%;
+                  font-size: 1.6rem;
+            }
+
+            .microphone-icon{
+                  width: 25px;
+                  height: 25px;
+            }
+
+            .search-buttons{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-top: 2.4rem;
+            }
+
+            .button-search{
+                  min-width: 54px;
+                  height: 36px;
+                  padding: 0 2rem;
+                  border: 1px solid transparent;
+                  border-radius: 5px;
+                  margin: 0.7rem;
+                  background-color: var(--button-search-background);
+                  color: var(--button-search-font);
+                  font-size: 1.4rem;
+            }
+
+            .button-search:hover{
+                  border-color: #dadce0;
+                  box-shadow: 0 1px 1px rgb(0, 0, 0 / 10%);
+            }
+
+            .button-search:focus{
+                  border-color: blue;
+            }
+
+            .footer{
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  width: 100%;
+                  border: 1px solid var(--border-color);
+                  background: var(--footer-background);
+                  color: var(--footer-font);
+                  font-size: 1.4rem;
+            }
+
+            .footer-left,
+            .footer-right{
+                  display: flex;
+            }
+
+            .footer-right{
+                  margin-right: 3rem;
+            }
+
+            .footer-link{
+                  display: block;
+                  padding: 1rem 0 1rem 3rem;
+            }
+
+            .footer-link:hover{
+                  text-decoration: underline;
+                  color: var(--footer-font-hover);
+            }
+
+            .footer-link:active{
+                  color: var(--footer-font-active);
+            }
+
+            @media(max-width: 660px){
+                  .footer{
+                        flex-direction: column;
+                  }
+
+                  .searchbar{
+                        width: 80%;
+                  }
+
+                  html{
+                        font-size: 50%;
+                  }
+            }
+
+      </style>
+
+</head>
+<body>
+
+      <nav class="nav">
+            <a class="nav-link" href="#">Gmail</a>
+            <a class="nav-link" href="#">Images</a>
+            <button class="button-apps" href="#"></button>
+            <a class="user-avatar" href="https://www.gmail.com" target="_blank">
+                  <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt=""/>
+            </a>
+
+      </nav>
+
+<main class="main">
+            <img class="logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt=""/>
+
+      <div class="searchbar">
+            <img class="search-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt=""/>
+            <input class="search-input" type="text"/>
+            <button>
+                  <img class="microphone-icon" src="https://storage.googleapis.com/stateless-ml2grow-com/2020/09/google-voice-search-logo-png-clip-art-1.png" alt="">
+            </button>
+      </div>
+
+      <div class="search-buttons">
+            <button class="button-search">Google Search</button>
+            <button class="button-search">I'm Feeling Lucky</button>
+      </div>
+
+</main>
+
+      <footer class="footer">
+            <div class="footer-left">
+                  <a class="footer-link" href="#">About</a>
+                  <a class="footer-link" href="#">Advertising</a>
+                  <a class="footer-link" href="#">Business</a>
+                  <a class="footer-link" href="#">How Search works</a>
+            </div>
+
+            <div class="footer-right">
+                  <a class="footer-link" href="#">Privacy</a>
+                  <a class="footer-link" href="#">Terms</a>
+                  <a class="footer-link" href="#">Settings</a>
+            </div>
+      </footer>
+
+</body>
+</html>
